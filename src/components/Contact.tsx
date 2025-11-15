@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -151,27 +151,11 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Telefon</h4>
                     <a
-                      href="tel:+40123456789"
+                      href="tel:+40721228623"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      +40 123 456 789
+                      +40 721 228 623
                     </a>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-border shadow-soft hover:shadow-medium transition-all">
-                <CardContent className="flex items-start gap-4 p-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-primary" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-1">Adresă</h4>
-                    <p className="text-muted-foreground">
-                      Str. Exemplu nr. 123
-                      <br />
-                      București, România
-                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -180,8 +164,7 @@ const Contact = () => {
                 <h4 className="text-xl font-bold mb-2">Program de Lucru</h4>
                 <div className="space-y-1 text-primary-foreground/90">
                   <p>Luni - Vineri: 09:00 - 18:00</p>
-                  <p>Sâmbătă: 10:00 - 14:00</p>
-                  <p>Duminică: Închis</p>
+                  <p>Sâmbătă - Duminică: Închis</p>
                 </div>
               </div>
             </div>

@@ -70,14 +70,11 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="tel:+40123456789"
+                  href="tel:+40721228623"
                   className="hover:text-background transition-colors"
                 >
-                  +40 123 456 789
+                  +40 721 228 623
                 </a>
-              </li>
-              <li className="text-background/80">
-                București, România
               </li>
             </ul>
           </div>
