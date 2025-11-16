@@ -15,13 +15,46 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Mesaj trimis!",
-      description: "Vă vom contacta în cel mai scurt timp posibil.",
-    });
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "e064fb06-e30e-49ae-ace4-81ba08bdb4f1",
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast({
+          title: "Mesaj trimis!",
+          description: "Vă vom contacta în cel mai scurt timp posibil.",
+        });
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        toast({
+          title: "Eroare",
+          description: "A apărut o eroare. Vă rugăm încercați din nou.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Eroare",
+        description: "A apărut o eroare. Vă rugăm încercați din nou.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
